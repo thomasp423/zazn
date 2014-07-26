@@ -1,0 +1,328 @@
+body {margin: 0;}
+
+$blue: #2d9de0 ;
+$lightBlue: #31a2e5;
+$black: #4a4a4a;
+$red: #df5a5a;
+$lightGray: #eee;
+$medGray: #bababa;
+$white: #fff;
+
+$font-family-Main: "brandon-grotesque";
+
+$base-font: 16px;
+$font-small: 1em;
+$font-medium: 1.3em;
+$font-large: 2.3em;
+$font-xl: 4em;
+
+$bolder: 700;
+$bold: 500;
+$light: 300;
+$thin: 100;
+
+$xl: 80px;
+$l: 60px;
+$m: 40px;
+$s: 20px;
+$xs: 10px;
+
+$radius: 4px;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-sizing($border-box) {
+  box-sizing: border-box;
+}
+
+.fs {font-size: $font-small;}
+.fm {font-size: $font-medium;}
+.fl {font-size: $font-large;}
+.fxl {font-size: $font-xl;}
+
+/* Collumns */
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.grid {
+}
+
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*='col-'] {padding-right: 20px;}
+
+[class*='col-']:last-of-type {padding-right: 0;}
+
+.prZ {padding-right: 0 !important;}
+
+[class*='col-'] {float: left;}
+
+.col-1-3 {width: 33.33%;}
+
+.col-1-4 {width: 25%;}
+
+.col-2 {width: 20%;}
+
+.col-30 {width: 30%}
+.col-10 {width: 10%;}
+
+.col-2-3 {width: 66.66%;}
+
+.col-3-4 {width: 75%;}
+
+.col-8 {width: 80%;}
+
+.col-9 {width: 90%;}
+
+.col-1-2 {width: 50%;}
+
+.col-35 {width: 35%;}
+
+.section [class*='col-'] {padding: 0;}
+
+.section {background: $white;}
+
+.maxW {max-width:900px; min-width: 900px;}
+
+.center {margin: 0 auto; float: none !important;}
+.centerText {text-align: center;}
+
+.pxl {padding: $xl;}
+.pl {padding: $l;}
+.pm {padding: $m;}
+.ps {padding: $s;}
+.pxs {padding: $xs;}
+
+.ptxl {padding-top: $xl;}
+.ptl {padding-top: $l;}
+.ptm {padding-top: $m;}
+.pts {padding-top: $s;}
+
+.plxl {padding-left: $xl;}
+.pll {padding-left: $l;}
+.plm {padding-left: $m;}
+.pls {padding-left: $s;}
+
+.prxl {padding-right: $xl;}
+.prl {padding-right: $l;}
+.prm {padding-right: $m;}
+.prs {padding-right: $s;}
+
+.prsOver {padding-right: $s !important;}
+
+.pbxl {padding-bottom: $xl;}
+.pbl {padding-bottom: $l;}
+.pbm {padding-bottom: $m;}
+.pbs {padding-bottom: $s;}
+
+.left {float: left !important;}
+.right {float: right !important;}
+
+/* Text */
+
+h1, h2, p, a, div, em {font-family: $font-family-Main; margin: 0;}
+h1 {color: $black; font-weight: 500;}
+h2 {color: $medGray; font-weight: 400; text-transform: uppercase;}
+p {color: $black;}
+a {cursor: pointer; text-decoration: none;}
+em {color: $black; font-style: normal;}
+
+/* Buttons */
+
+.btn {
+  @include border-radius(4px);
+  background: $blue;
+  color: $white;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 28px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:active {
+  @include border-radius(4px);
+  color: $white;
+}
+
+.white {color: $white;}
+.light {color: $lightGray;}
+.red {background: $red;}
+.black {background: $black;}
+
+
+/* Select */
+.arrow { 
+  background: url(../img/arrow.png) no-repeat right $white;
+  height: 50px;
+  width: 50px;
+}
+
+.circleSelect select {
+  margin-left: -70px;
+  margin-top: 2px;
+  width: 284px; 
+  height: 284px;
+  @include border-radius(150px);
+  background: url(../img/arrow.png) no-repeat right $white;
+  background-size: 30px;
+  border: none;
+  padding: 90px;
+  background-position-x: 205px;
+  background-position-y: 139px;
+}
+
+.selectStyle {
+  background: url(../img/arrow.png) no-repeat right $white;
+  background-size: 10%;
+  @include border-radius(4px);
+  cursor: pointer;
+  margin: 0 auto;
+  border: 2px solid $lightGray;
+  width: 150px;
+}
+
+.smallSelect {
+  @extend .selectStyle;
+  background: url(../img/arrow.png) no-repeat right $white;
+  background-size: 30%;
+  width: 30px;
+  }
+
+select {
+  background: transparent;
+  -webkit-appearance: none;
+  border: none;
+  color: $black;
+  cursor: pointer;
+  height: 40px;
+  width: 100%;
+  margin: 0;
+  padding-left: 10px;
+}
+
+select:active, select:focus, input, input:active {outline: none;}
+
+/* Header */
+
+header {
+  font-weight: 500;
+}
+
+/* Input Section */
+
+#input h3 {
+  text-transform: uppercase;
+  color: $black;
+}
+
+#output {
+  height: 250px;
+  position: relative;
+}
+
+/* Circle */
+// timer scss yay //
+$circleSize: 300px;
+$lineWidth: 6px;
+
+#circleContainer {position: relative; width: 310px;}
+
+#circle {
+  width: $circleSize; 
+  height: $circleSize;
+  @include border-radius(150px);
+  border: 6px solid $lightGray;
+}
+
+#timer {
+  margin-top: 40%;
+  text-align: center;
+  color: $medGray;
+}
+
+/* animate circle */
+
+#circleTimer {
+    width: $circleSize;
+    height: $circleSize;
+    position: absolute;
+    margin-left: 5px; 
+}
+
+.pietimer {
+    position:relative;
+    font-size: 200px;
+    width: $lineWidth;
+    height:$lineWidth;
+    float: left;
+}
+.pietimer > .percent {
+    position: absolute;
+    top: 1.05em;
+    left: 0;
+    width: 3.33em;
+    font-size: 0.3em;
+    text-align:center;
+    display: none;
+}
+.pietimer > .slice {
+    position:absolute;
+    width: 300px;
+    height: 300px;
+    clip:rect(0em,1em,1em,0.5em);
+}
+.pietimer > .slice.gt50 {
+    clip:rect(auto, auto, auto, auto);
+}
+.pietimer > .slice > .pie {
+    border: $lineWidth solid #c0c0c0;
+    position:absolute;
+    width: 1em; /* 1 - (2 * border width) */
+    height: 1em; /* 1 - (2 * border width) */
+    clip:rect(0em,0.5em,1em,0em);
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em; 
+    border-radius: 1em; 
+}
+.pietimer > .slice > .pie.fill {
+    -moz-transform:rotate(150deg) !important;
+    -webkit-transform:rotate(150deg) !important;
+    -o-transform:rotate(150deg) !important;
+    transform:rotate(150deg) !important;
+}
+.pietimer.fill > .percent {
+    display: none;
+}
+.pietimer.fill > .slice > .pie {
+    border: transparent;
+    background-color: #c0c0c0;
+    width:1em;
+    height:1em;
+}
+
+
+/* hide */
+
+.hide {display: none;}
+
+/* Footer */
+
+footer {}
