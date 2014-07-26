@@ -3,4 +3,4 @@ zazn
 
 A simple meditation timer
 
-Testing commit2
+Testing commit3
