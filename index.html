@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zazn Meditation App</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="text/javascript" src="js/jQuery.js"></script>
+  <script type="text/javascript" src="js/timer.js"></script>
+
+  <script type="text/javascript"> 
+  $(document).ready(function() {
+  $('#during').hide();
+  $('#finish').hide();
+  $('#timer').hide();
+  $('#play').hide();
+  $('#circleTimer').hide();
+  });
+  </script>
+</head>
+<body class="pxs">
+  <header class="grid pts pbm">
+    <h1 class="centerText fl"> <img src="img/lotus.jpg" height="40px;" style="margin-bottom: -10px; margin-right: 10px;" />zazn Testing Committ</h1>
+  </header>
+  <div id="circleContainer" class="grid center">
+    <div id="circleTimer"></div>
+    <div id="circle" class="center">
+       <div id="timer" class="fl"></div>
+          <div class="grid">
+            <div class="col-1-2 center">
+              <div class="circleSelect">
+                <select id="min" class="fm">  
+                  <option value="0">0 minutes</option>
+                  <option value="300">5 minutes</option>
+                  <option value="600">10 minutes</option>
+                  <option value="900">15 minutes</option>
+                  <option value="1200">20 minutes</option>
+                  <option value="1500">25 minutes</option>
+                </select>
+              </div>
+            </div>
+          </div>
+    </div>
+    </div>
+    <div class="grid">
+      <div class="col-1-3 center centerText prZ ptm">
+        <div id="begin">
+        <a class="btn fm" onClick="begin()">Begin Meditation</a>
+          <div class="grid">
+            <div id="soundArea" class="col-1-2 ptl">
+            <h2 class="fs">Select Chime</h2>
+              <div class="selectStyle">
+              <select id="sound">
+              <option id="ding" value="ding">Ding</option>
+              <option id="bell" value="bell">Gong</option>
+              </select>
+              </div>
+            </div>
+           <div id="intervalArea" class="col-1-2 ptl">
+            <h2 class="fs">Select Interval</h2>
+              <div class="selectStyle">
+              <select id="interval">
+              <option value="-1">No Interval</option>
+              <option value="5">5 minutes</option>
+              <option value="10">10 minutes</option>
+              <option value="15">15 minutes</option>
+              <option value="20">20 minutes</option>
+              </select>
+            </div>
+          </div>
+          </div>
+        </div>
+      
+        <div id="during" class="opacity">
+        <a class="btn fm black" id="stop" onClick="stop()">Pause</a>
+        <a class="btn fm black" id="play" onClick="play()">Play</a>
+
+        <a class="btn fm red" onClick="resetTime()">Reset</a>
+        <a class="btn fm red" onClick="finish()">Finish Test</a>
+        </div>
+
+        <div id="finish" class="centerText ptm grid opacity">
+          <div id="quote" class="pbm col-1-2 center">
+              <p class="centerText fm">"Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment."
+               <p class="fm">- Buddha</p>
+              </p>
+            </div>
+            <a id="again" class="btn fm" onClick="again()">Meditate Again</a>
+         
+        </div>
+
+      </div>
+
+      <audio id="soundName" style="display: none;"></audio>
+    </div>
+    <script type="text/javascript" src="//use.typekit.net/vgw5kyv.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </body>
+</html>
